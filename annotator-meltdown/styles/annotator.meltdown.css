@@ -1,7 +1,13 @@
 /** additional styles for annotator meltdown extension **/
 
 .meltdown_wrap.heightsManaged{
-    resize: both;
+  resize: both;
+  margin: 0;
+  min-width: 98%;
+}
+
+.annotator-viewer div:first-of-type{
+  font-style: inherit;
 }
 
 /* suppress tech preview warning */
