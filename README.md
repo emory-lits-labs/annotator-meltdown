@@ -17,38 +17,12 @@ style interactions.
 * [Meltdown](https://github.com/iphands/Meltdown)
 
 ##Using Annotator-Meltdown
-To use this plugin in your Annotator project, set annotator-meltdown as the
-viewer and editor as part of initializing `annotator.ui.main`:
 
-```
-    var app = new annotator.App();
-    app.include(annotator.ui.main,{
-      viewerExtensions: [
-        annotatormeltdown.viewerExtension
-      ],
-      editorExtensions: [
-        annotatormeltdown.getEditorExtension()
-      ]
-    });
-```
-
-In addition to including the viewer and editor extensions, Annotator-Meltdown
-requires several js and css files to work properly.
-* meltdown/js
-* meltdown/css
-* annotator.meltdown.css
-* annotator.meltdown.js
-
-See the demo/index.html page for a full example of all required files.
-
-##Configuration options
-* `min_width` Sets the minimum width of the editor element:
-
-```
-    editorExtensions: [
-      annotatormeltdown.getEditorExtension({min_width: '500px'})
-    ]
-```
+To use this plugin in your Annotator project, include the required
+javascript and css, and initialize it as a viewer and editor extension
+within the main annotator ui module.  See
+[installation instructions](http://emory-lits-labs.github.io/annotator-meltdown/#install)
+for installation and configuration notes.
 
 ## Developer Notes
 

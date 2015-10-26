@@ -36,11 +36,11 @@ user-select: none;
 
 @font-face {
 	font-family: 'meltdown';
-	src:url('../fonts/meltdown.eot');
-	src:url('../fonts/meltdown.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/meltdown.woff') format('woff'),
-		url('../fonts/meltdown.ttf') format('truetype'),
-		url('../fonts/meltdown.svg#meltdown') format('svg');
+	src:url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot');
+	src:url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot?#iefix') format('embedded-opentype'),
+		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.woff') format('woff'),
+		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.ttf') format('truetype'),
+		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.svg#meltdown') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -371,7 +371,7 @@ li.meltdown_controlgroup-open > span {
 	color: #06c;
 }
 .meltdown_controls li.meltdown_controlgroup i.meltdown-icon-caret-down {
-	
+
 }
 li.meltdown_controlgroup li {
 	float: none;
