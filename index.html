@@ -56,8 +56,10 @@ dependencies are provided for convenience.</p>
 {% endhighlight %}
 
 
-<p>To use this plugin in your Annotator project, set annotator-meltdown as the
-viewer and editor wheny ou initialize <b>annotator.ui.main</b>:</p>
+
+<p>To use this plugin in your Annotator project, set annotator-meltdown as both
+a viewer and editor extension when you initialize <b>annotator.ui.main</b>.
+You can optionally configure a minimum width for the editor element:</p>
 
 {% highlight html %}
     var app = new annotator.App();
@@ -66,7 +68,7 @@ viewer and editor wheny ou initialize <b>annotator.ui.main</b>:</p>
         annotatormeltdown.viewerExtension
       ],
       editorExtensions: [
-        annotatormeltdown.getEditorExtension()
+        annotatormeltdown.getEditorExtension({min_width: '500px'})
       ]
     });
 {% endhighlight %}
