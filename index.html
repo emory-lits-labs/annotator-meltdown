@@ -50,6 +50,11 @@ simple toolbar for managing format markup.</p>
 
 <p>Try it out in this <a href="demo/">simple demo</a>.</p>
 
+<p><i>Note:</i> {{ page.title }} modifies the default Annotator.js keyboard
+shortcuts so that the <b>enter</b> key can be used to create new lines
+in the annotation text.  Use <b>shift+enter</b> to save and close the
+current annotation.</p>
+
 <h3>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
@@ -64,8 +69,6 @@ dependencies are provided for convenience.</p>
 <link rel="stylesheet" type="text/css" href="http://emory-lits-labs.github.io/annotator-meltdown/build/{{ site.data.package.version }}/annotator.meltdown.min.css" />
 <script type="text/javascript" src="http://emory-lits-labs.github.io/annotator-meltdown/build/{{ site.data.package.version }}/annotator.meltdown.min.js"></script>
 {% endhighlight %}
-
-
 
 <p>To use this plugin in your Annotator project, set annotator-meltdown as both
 a viewer and editor extension when you initialize <b>annotator.ui.main</b>.
