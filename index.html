@@ -1,11 +1,13 @@
 ---
+title: annotator-meltdown
+description: Annotator.js plugin for Markdown support for editing and viewing annotations
 ---
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>annotator-meltdown by emory-lits-labs</title>
+    <title>{{ page.title }} by emory-lits-labs</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
@@ -13,11 +15,19 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta content="summary" name="twitter:card" />
+    <meta content="{{ page.title }}" name="twitter:title" />
+    <meta content="{{ page.description }}" name="twitter:description" />
+    <!-- TODO: twitter card thumbnail image? -->
+    <meta content="website" property="og:type" />
+    <meta content="{{ page.title }}" property="og:title" />
+    <meta content="{{ site.url }}" property="og:url" />
+    <meta content="{{ page.description }}" property="og:description" />
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>annotator-meltdown</h1>
+        <h1>{{ page.title }}</h1>
         <p><a href="https://github.com/openannotation/annotator">Annotator.js</a>
          plugin for <a href="https://github.com/iphands/Meltdown">Meltdown</a> viewer and editor integration.  Designed for use with Anntotator 2.x releases.</p>
 
@@ -40,6 +50,11 @@ simple toolbar for managing format markup.</p>
 
 <p>Try it out in this <a href="demo/">simple demo</a>.</p>
 
+<p><i>Note:</i> {{ page.title }} modifies the default Annotator.js keyboard
+shortcuts so that the <b>enter</b> key can be used to create new lines
+in the annotation text.  Use <b>shift+enter</b> to save and close the
+current annotation.</p>
+
 <h3>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
@@ -54,8 +69,6 @@ dependencies are provided for convenience.</p>
 <link rel="stylesheet" type="text/css" href="http://emory-lits-labs.github.io/annotator-meltdown/build/{{ site.data.package.version }}/annotator.meltdown.min.css" />
 <script type="text/javascript" src="http://emory-lits-labs.github.io/annotator-meltdown/build/{{ site.data.package.version }}/annotator.meltdown.min.js"></script>
 {% endhighlight %}
-
-
 
 <p>To use this plugin in your Annotator project, set annotator-meltdown as both
 a viewer and editor extension when you initialize <b>annotator.ui.main</b>.
@@ -72,6 +85,15 @@ You can optionally configure a minimum width for the editor element:</p>
       ]
     });
 {% endhighlight %}
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<ul>
+  <li><a href="https://jquery.com/">jQuery</a> 1.8+ (1.9.1 recommended)</li>
+  <li><a href="https://github.com/openannotation/annotator">Annotator.js</a> 2.x</li>
+  <li><a href="https://github.com/iphands/Meltdown">Meltdown</a></li>
+</ul>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
