@@ -69,7 +69,7 @@ var annotatormeltdown = {
         this._pre_meltdown_show(position);
         // enable meltdown on the textarea and set a min-width
         if (! this.meltdown_initialized) {
-            $(this.element).find("textarea").meltdown({
+            $(this.element).find("textarea").first().meltdown({
                 previewCollapses: false,
                 openPreview: true
             });
