@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+* Include a default mimetype in meltdown audio template
+
 ## 0.2
 
 * Switch markdown parser from js-markdown-extra to showdown
