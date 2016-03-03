@@ -64,7 +64,9 @@
     <!-- The main Annotator script -->
     <script type="text/javascript" src="scripts/annotator.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../src/meltdown/js/libs/js-markdown-extra.js"></script>
+    <script type="text/javascript" src="../src/showdown/showdown.min.js"></script>
+    <script type="text/javascript" src="../src/showdown/xss.min.js"></script>
+    <script type="text/javascript" src="../src/showdown/footnotes.js"></script>
     <script type="text/javascript" src="../src/meltdown/js/libs/rangyinputs-jquery.min.js"></script>
     <script type="text/javascript" src="../src/meltdown/js/libs/element_resize_detection.js"></script>
     <script type="text/javascript" src="../src/meltdown/js/jquery.meltdown.js"></script>
@@ -84,7 +86,7 @@
             annotatormeltdown.viewerExtension
           ],
           editorExtensions: [
-            annotatormeltdown.getEditorExtension({min_width: '500px'})
+            annotatormeltdown.getEditorExtension({min_width: '500px', 'font_awesome': true})
           ]
         });
         app.start();

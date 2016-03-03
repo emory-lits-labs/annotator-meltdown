@@ -15,6 +15,8 @@ style interactions.
 * jQuery 1.8+ (1.9.1 recommended)
 * Annotator.js
 * [Meltdown](https://github.com/iphands/Meltdown)
+* [Showdown](https://github.com/showdownjs/showdown)
+* [js-xss](https://github.com/leizongmin/js-xss)
 
 ##Using Annotator-Meltdown
 

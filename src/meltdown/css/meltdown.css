@@ -257,6 +257,7 @@ li.meltdown_controlbutton:focus > span {
 .meltdown_controls li.meltdown_control-codeblock > span,
 .meltdown_controls li.meltdown_control-code > span,
 .meltdown_controls li.meltdown_control-footnote > span,
+.meltdown_controls li.meltdown_control-audio > span,
 .meltdown_controls li.meltdown_controlgroup-kitchenSink > span {
 	height: 12px;
 	position: relative;
@@ -276,6 +277,7 @@ li.meltdown_controlbutton:focus > span {
 .meltdown_controls li.meltdown_control-codeblock > span:before,
 .meltdown_controls li.meltdown_control-code > span:before,
 .meltdown_controls li.meltdown_control-footnote > span:before,
+.meltdown_controls li.meltdown_control-audio > span:before,
 .meltdown_controls li.meltdown_controlgroup-kitchenSink > span:before {
 	position: absolute;
 		left: 4px;
@@ -344,6 +346,16 @@ li.meltdown_controlbutton:focus > span {
 	content: "\5f";
 }
 
+/* audio button */
+.meltdown_controls li.meltdown_control-audio > span:before {
+    content: "\266C";  /* unicode icon for musical notes */
+}
+.meltdown_controls.fa-avail li.meltdown_control-audio > span:before {
+    font-family: FontAwesome;
+    content: "\f028";  /* font-awesome icon; currently using sound volume */
+}
+
+
 li.meltdown_controlgroup ul {
 	position: absolute;
 		left: 0;
@@ -390,6 +402,8 @@ li.meltdown_controlbutton.disabled:focus > span {
 .meltdown_controlbutton.overflowedControl {
 	display: none;
 }
+
+
 
 
 /* Meltdown Preview
@@ -512,6 +526,24 @@ li.meltdown_controlbutton.disabled:focus > span {
 	resize: none;
 }
 
+div.footnotes {
+	margin-top: 20px;
+	padding-top: 10px;
+	border-top: 1px solid gray;
+
+}
+.meltdown_preview div.footnotes  {
+	padding: 10px;
+}
+
+.meltdown_preview div.footnotes ol {
+	margin-left: 15px;
+}
+
+div.footnotes ol {
+	padding-left: 20px;
+}
+
 
 /* element_resize_detection.js
    Source: http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/
@@ -538,3 +570,6 @@ li.meltdown_controlbutton.disabled:focus > span {
   width: 200%;
   height: 200%;
 }
+
+
+
