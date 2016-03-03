@@ -13,6 +13,7 @@ module.exports = function(grunt) {
                 'src/meltdown/js/libs/rangyinputs-jquery.min.js',
                 'src/meltdown/js/libs/element_resize_detection.js',
                 'src/showdown/showdown.min.js',
+                'src/showdown/xss.min.js',
                 'src/showdown/footnotes.js',
                 'src/meltdown/js/jquery.meltdown.js',
                 'src/scripts/annotator.meltdown.js'
