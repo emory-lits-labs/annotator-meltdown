@@ -10,9 +10,10 @@ module.exports = function(grunt) {
       default: {
         files: {
             'build/<%= pkg.version %>/annotator.meltdown.min.js': [
-                'src/meltdown/js/libs/js-markdown-extra.js',
                 'src/meltdown/js/libs/rangyinputs-jquery.min.js',
                 'src/meltdown/js/libs/element_resize_detection.js',
+                'src/showdown/showdown.min.js',
+                'src/showdown/footnotes.js',
                 'src/meltdown/js/jquery.meltdown.js',
                 'src/scripts/annotator.meltdown.js'
              ]
