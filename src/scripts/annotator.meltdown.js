@@ -8,12 +8,26 @@
 var _t = annotator.util.gettext;
 
 var annotatormeltdown = {
+    /**
+    * use js-xss to filter text (disable javascript, etc)
+    */
+    filterXSS: function(text) {
 
+        return filterXSS(text, {
+            whiteList: {
+              audio:  ['controls', 'loop', 'preload', 'src'],  // disable autoplay
+              'source': ['src', 'type']  // allow source tag, used in audio
+            }
+        });
+    },
+
+    converter: new showdown.Converter({extensions: ['footnotes']}),
     parser: function(text) {
         // convert markdown into html
-        var converter = new showdown.Converter({extensions: [showdown.extensions.footnotes]});
-        return converter.makeHtml(text);
+        var result = annotatormeltdown.converter.makeHtml(annotatormeltdown.filterXSS(text));
+        return result;
     },
+
 
     /**
      * Replacement viewer render method.
@@ -77,6 +91,9 @@ var annotatormeltdown = {
             placeholder: "http://",
             after: "' />\n</audio>"
         };
+        // modify codeblock style to match showdown
+        $.meltdown.controlDefs.codeblock['before'] = "```\n";
+        $.meltdown.controlDefs.codeblock['after'] = "\n```";
 
     },
 
@@ -85,10 +102,12 @@ var annotatormeltdown = {
     show: function(position) {
         // use unextended method to handle normal show functionality
         this._pre_meltdown_show(position);
+        var textarea = $(this.element).find("textarea").first();
+
         // enable meltdown on the textarea and set a min-width
         if (! this.meltdown_initialized) {
             annotatormeltdown.customize_meltdown();
-            $(this.element).find("textarea").first().meltdown({
+            textarea.first().meltdown({
                 previewCollapses: false,
                 openPreview: true,
                 parser: annotatormeltdown.parser,
@@ -102,13 +121,26 @@ var annotatormeltdown = {
             if (this.meltdown_options.font_awesome) {
                 this.element.find('.meltdown_controls').addClass('fa-avail');
             }
+            /* annotator purposely sets the editor at a higher z-index
+            than anything else on the page; make sure controls drop-down
+            menu is still higher so it isn't obscured by annotator buttons */
+            $('.meltdown_controlgroup-dropdown').css('z-index', parseInt($('.annotator-editor').css('z-index')) + 1);
+
             this.meltdown_initialized = true;
         } else {
             // make sure preview area is updated for current text
-            $(this.element).find("textarea").meltdown("update");
+            textarea.first().meltdown("update");
         }
         // always ensure textarea has focus for immediate input
-        $(this.element).find("textarea").focus();
+        textarea.first().focus();
+    },
+
+    submit: function () {
+        // run xss filter on textarea *before* saving, to remove
+        // unwanted tags and attributes from the stored attribute
+        var textarea= $(this.element).find("textarea").first();
+        textarea.val(annotatormeltdown.filterXSS(textarea.val()));
+        return this._pre_meltdown_submit();
     },
 
     /**
@@ -159,6 +191,9 @@ var annotatormeltdown = {
             // track meltdown initialization since it only needs to be done once
             editor.meltdown_initialized = false;
             editor.meltdown_options = meltdown_opts;
+            editor._pre_meltdown_submit = editor.submit; // preserve unextended submit method
+            editor.submit = annotatormeltdown.submit;
+
         };
     },
 };
