@@ -4,6 +4,7 @@
 
 * Switch markdown parser from js-markdown-extra to showdown
 * Add a showdown-footnotes extension so footnotes will continue to work as they did with js-markdown-extra
+* Add XSS filtering to disable javascript and other dangerous tags in preview and saved annotations
 * Add audio menu item to meltdown "kitchen sink" control; inserts HTML5 audio
 * Remove workaround for  [annotator.js #533](https://github.com/openannotation/annotator/pull/533)
 
