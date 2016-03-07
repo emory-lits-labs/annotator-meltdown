@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+* Wrap audio template in newlines to ensure it will be processed as block html
+
 ## 0.2.1
 
 * Include a default mimetype in meltdown audio template
