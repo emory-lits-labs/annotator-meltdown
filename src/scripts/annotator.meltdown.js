@@ -87,9 +87,9 @@ var annotatormeltdown = {
         $.meltdown.controlDefs.audio = {
             label: "Audio",
             altText: "Audio",
-            before: "\n<audio controls='controls'>\n<source src='",
+            before: "\n\n<audio controls='controls'>\n<source src='",
             placeholder: "http://",
-            after: "' type='audio/mpeg'/>\n</audio>"
+            after: "' type='audio/mpeg'/>\n</audio>\n\n"
         };
         // modify codeblock style to match showdown
         $.meltdown.controlDefs.codeblock['before'] = "```\n";
