@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3
+
+* Trigger new custom events: **annotator-meltdown:meltdown-initialized** when the meltdown editor is
+    initialized for the first time; **annotator-meltdown:editor-show** and **annotator-meltdown:editor-submit** on
+    show and submit editor methods.
+* Add allowed audio tags to  default [js-xss](https://github.com/leizongmin/js-xss) whitelist
+   rather than replacing the default whitelist entirely.
+
 ## 0.2.2
 
 * Wrap audio template in newlines to ensure it will be processed as block html
