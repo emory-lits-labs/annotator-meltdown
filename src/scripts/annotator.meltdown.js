@@ -95,6 +95,15 @@ var annotatormeltdown = {
             placeholder: "http://",
             after: "' type='audio/mpeg'/>\n</audio>\n\n"
         };
+        // add html5 video input
+        $.meltdown.defaults.controls[9].push('video');
+        $.meltdown.controlDefs.video = {
+            label: "Video",
+            altText: "Video",
+            before: "\n\n<video width='320' height='240' controls='controls'>\n<source src='",
+            placeholder: "http://",
+            after: "' type='video/mp4'/>\n</video>\n\n"
+        };
         // modify codeblock style to match showdown
         $.meltdown.controlDefs.codeblock['before'] = "```\n";
         $.meltdown.controlDefs.codeblock['after'] = "\n```";
@@ -131,7 +140,6 @@ var annotatormeltdown = {
             menu is still higher so it isn't obscured by annotator buttons */
             $('.meltdown_controlgroup-dropdown').css('z-index', parseInt($('.annotator-editor').css('z-index')) + 1);
 
-            console.log('triggering');
             $(this.element).trigger('annotator-meltdown:meltdown-initialized');
             this.meltdown_initialized = true;
         } else {
