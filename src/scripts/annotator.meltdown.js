@@ -206,10 +206,15 @@ var annotatormeltdown = {
     },
 };
 
-
+/* example handlers for custom events
 $(document).on('annotator-meltdown:meltdown-initialized', function() {
     console.log("meltdown initialized");
 });
-$(document).on('annotator-meltdown:editor-closed', function() {
+$(document).on('annotator-meltdown:editor-show', function() {
+    console.log("meltdown show");
+});
+$(document).on('annotator-meltdown:editor-submit', function() {
     console.log("meltdown closed");
 });
+*/
+
