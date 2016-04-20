@@ -36,11 +36,11 @@ user-select: none;
 
 @font-face {
 	font-family: 'meltdown';
-	src:url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot');
-	src:url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot?#iefix') format('embedded-opentype'),
-		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.woff') format('woff'),
-		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.ttf') format('truetype'),
-		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.svg#meltdown') format('svg');
+	src:url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot');
+	src:url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot?#iefix') format('embedded-opentype'),
+		url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.woff') format('woff'),
+		url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.ttf') format('truetype'),
+		url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.svg#meltdown') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
