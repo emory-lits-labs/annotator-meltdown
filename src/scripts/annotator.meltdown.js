@@ -131,7 +131,6 @@ var annotatormeltdown = {
             menu is still higher so it isn't obscured by annotator buttons */
             $('.meltdown_controlgroup-dropdown').css('z-index', parseInt($('.annotator-editor').css('z-index')) + 1);
 
-            console.log('triggering');
             $(this.element).trigger('annotator-meltdown:meltdown-initialized');
             this.meltdown_initialized = true;
         } else {
