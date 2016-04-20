@@ -95,6 +95,15 @@ var annotatormeltdown = {
             placeholder: "http://",
             after: "' type='audio/mpeg'/>\n</audio>\n\n"
         };
+        // add html5 video input
+        $.meltdown.defaults.controls[9].push('video');
+        $.meltdown.controlDefs.video = {
+            label: "Video",
+            altText: "Video",
+            before: "\n\n<video width='320' height='240' controls='controls'>\n<source src='",
+            placeholder: "http://",
+            after: "' type='video/mp4'/>\n</video>\n\n"
+        };
         // modify codeblock style to match showdown
         $.meltdown.controlDefs.codeblock['before'] = "```\n";
         $.meltdown.controlDefs.codeblock['after'] = "\n```";
