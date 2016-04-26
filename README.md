@@ -8,6 +8,9 @@ and is based in part on annotator.ui.markdown.
 Includes annotator.meltdown.css to adjust for annotator/meltdown
 style interactions.
 
+## License
+**annotator-meltdown** is distributed under the Apache 2.0 License.
+
 ##Demo
 [View a simple demo of Annotator-Meltdown here.](http://emory-lits-labs.github.io/annotator-meltdown/demo/)
 
