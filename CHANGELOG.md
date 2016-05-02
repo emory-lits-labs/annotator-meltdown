@@ -7,6 +7,8 @@
     show and submit editor methods.
 * Add allowed audio tags to  default [js-xss](https://github.com/leizongmin/js-xss) whitelist
    rather than replacing the default whitelist entirely.
+* Add video menu item to meltdown "kitchen sink" control; inserts HTML5 video
+* Update referenced font urls to be http/https agnostic
 
 ## 0.2.2
 
