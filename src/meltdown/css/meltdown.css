@@ -36,11 +36,11 @@ user-select: none;
 
 @font-face {
 	font-family: 'meltdown';
-	src:url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot');
-	src:url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot?#iefix') format('embedded-opentype'),
-		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.woff') format('woff'),
-		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.ttf') format('truetype'),
-		url('http://emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.svg#meltdown') format('svg');
+	src:url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot');
+	src:url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.eot?#iefix') format('embedded-opentype'),
+		url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.woff') format('woff'),
+		url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.ttf') format('truetype'),
+		url('//emory-lits-labs.github.io/annotator-meltdown/src/meltdown/fonts/meltdown.svg#meltdown') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -258,6 +258,7 @@ li.meltdown_controlbutton:focus > span {
 .meltdown_controls li.meltdown_control-code > span,
 .meltdown_controls li.meltdown_control-footnote > span,
 .meltdown_controls li.meltdown_control-audio > span,
+.meltdown_controls li.meltdown_control-video > span,
 .meltdown_controls li.meltdown_controlgroup-kitchenSink > span {
 	height: 12px;
 	position: relative;
@@ -278,6 +279,7 @@ li.meltdown_controlbutton:focus > span {
 .meltdown_controls li.meltdown_control-code > span:before,
 .meltdown_controls li.meltdown_control-footnote > span:before,
 .meltdown_controls li.meltdown_control-audio > span:before,
+.meltdown_controls li.meltdown_control-video > span:before,
 .meltdown_controls li.meltdown_controlgroup-kitchenSink > span:before {
 	position: absolute;
 		left: 4px;
@@ -354,6 +356,16 @@ li.meltdown_controlbutton:focus > span {
     font-family: FontAwesome;
     content: "\f028";  /* font-awesome icon; currently using sound volume */
 }
+
+/* video button */
+.meltdown_controls li.meltdown_control-video > span:before {
+    content: "&#128249;";  /* unicode icon for musical notes */
+}
+.meltdown_controls.fa-avail li.meltdown_control-video > span:before {
+    font-family: FontAwesome;
+    content: "\f03d";  /* font-awesome icon: video camera */
+}
+
 
 
 li.meltdown_controlgroup ul {

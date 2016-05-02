@@ -12,12 +12,16 @@ var annotatormeltdown = {
     * use js-xss to filter text (disable javascript, etc)
     */
     filterXSS: function(text) {
-
+        // extend the default js-xss whitelist with local customizations
+        var whiteList = filterXSS.getDefaultWhiteList();  // defaults
+        // allow audio, but disable auto play
+        whiteList.audio = ['controls', 'loop', 'preload', 'src'];
+        // allow source tag, used in audio
+        whiteList.source =  ['src', 'type'];
+        // allow name anchors, class attributes on a tags
+        whiteList.a.push('name', 'id', 'class');
         return filterXSS(text, {
-            whiteList: {
-              audio:  ['controls', 'loop', 'preload', 'src'],  // disable autoplay
-              'source': ['src', 'type']  // allow source tag, used in audio
-            }
+            'whiteList': whiteList
         });
     },
 
@@ -91,6 +95,15 @@ var annotatormeltdown = {
             placeholder: "http://",
             after: "' type='audio/mpeg'/>\n</audio>\n\n"
         };
+        // add html5 video input
+        $.meltdown.defaults.controls[9].push('video');
+        $.meltdown.controlDefs.video = {
+            label: "Video",
+            altText: "Video",
+            before: "\n\n<video width='320' height='240' controls='controls'>\n<source src='",
+            placeholder: "http://",
+            after: "' type='video/mp4'/>\n</video>\n\n"
+        };
         // modify codeblock style to match showdown
         $.meltdown.controlDefs.codeblock['before'] = "```\n";
         $.meltdown.controlDefs.codeblock['after'] = "\n```";
@@ -102,6 +115,7 @@ var annotatormeltdown = {
     show: function(position) {
         // use unextended method to handle normal show functionality
         this._pre_meltdown_show(position);
+        $(this.element).trigger('annotator-meltdown:editor-show');
         var textarea = $(this.element).find("textarea").first();
 
         // enable meltdown on the textarea and set a min-width
@@ -126,6 +140,7 @@ var annotatormeltdown = {
             menu is still higher so it isn't obscured by annotator buttons */
             $('.meltdown_controlgroup-dropdown').css('z-index', parseInt($('.annotator-editor').css('z-index')) + 1);
 
+            $(this.element).trigger('annotator-meltdown:meltdown-initialized');
             this.meltdown_initialized = true;
         } else {
             // make sure preview area is updated for current text
@@ -140,6 +155,7 @@ var annotatormeltdown = {
         // unwanted tags and attributes from the stored attribute
         var textarea= $(this.element).find("textarea").first();
         textarea.val(annotatormeltdown.filterXSS(textarea.val()));
+        $(this.element).trigger('annotator-meltdown:editor-submit');
         return this._pre_meltdown_submit();
     },
 
@@ -197,3 +213,16 @@ var annotatormeltdown = {
         };
     },
 };
+
+/* example handlers for custom events
+$(document).on('annotator-meltdown:meltdown-initialized', function() {
+    console.log("meltdown initialized");
+});
+$(document).on('annotator-meltdown:editor-show', function() {
+    console.log("meltdown show");
+});
+$(document).on('annotator-meltdown:editor-submit', function() {
+    console.log("meltdown closed");
+});
+*/
+
